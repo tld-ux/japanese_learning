@@ -24,6 +24,7 @@
             var Pswdlength = document.getElementById("password").length;
             var Pswdmatch = document.getElementById("matchpswd");
             var Pswdmin = document.getElementById("mindpswd");
+            var Pswdminlength = 12;
 
             if (Pswd != Pswdconf){
                 Pswdmatch.innerHTML = "Passwords must match";
@@ -31,14 +32,20 @@
             }
             else
                 Pswdmatch.innerHTML = " ";
-            if (Pswdlength <= 12) {
+            if (Pswdlength <= Pswdminlength) {
                 Pswdmin.innerHTML = "at least 12 characters";
                 Pswdmin.style.color = "red";
             }
-            else (Pswdlength >= 12)
+            else (Pswdlength >= Pswdminlength)
                 Pswdmin.innerHTML = " ";
 
             <button type="submit">Sign up</button>
+            if (Pswd != Pswdconf || Pswdlength <= Pswdminlength)
+            {
+                <button><input type="submit" value="submit" disabled>Sign up</input></button>;
+            }
+            else 
+                <button><input type="submit" value="submit">Sign up</input></button>;
         </script>
     </form>
 </body>
