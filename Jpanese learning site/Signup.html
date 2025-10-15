@@ -6,18 +6,18 @@
 <body>
     <h1>Sign Up</h1>
     <form action="SignupProcsessor.php" method="post">
-        <label>Username: /<input type="text" name="username"></label>
-        <label>Fluency: /<select name="Fluency" id="Fluency">
+        <label>Username: <br><input type="text" name="username"></label>
+        <label>Fluency: <br><select name="Fluency" id="Fluency">
             <option value="">Please choose an option</option>
             <option value="1">Begginer</option>
             <option value="2">Novice</option>
             <option value="3">Intermediate</option>
             <option value="4">Fluent</option>
         </select>
-        <label>Password: <br><input type="text" name="password"></label>
-        <p id="minpswd">at least 12 characters <br></p>
-        <label>Confirm Password: <br><input type="text" name="passwordconfirm"></label>
-        <p id="matchpswd">Passwords must match <br></p>
+        <label><br>Password: <br><input type="text" name="password"></label>
+        <p id="minpswd">at least 12 characters </p>
+        <label><br>Confirm Password:<input type="text" name="passwordconfirm"></label>
+        <p id="matchpswd">Passwords must match</p>
         <script>
             var Pswd = document.getElementById("password").innerHTML;
             var Pswdconf = document.getElementById("passwordconfirm").innerHTML;
