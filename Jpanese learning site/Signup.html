@@ -46,11 +46,11 @@
 
             if ((Pswd != Pswdconf) || (Pswdlength <= Pswdminlength))
             {
-                <input type="submit" value="submit" disabled>Sign up</input>;
+                document.body.innerHTML = '<input type="submit" value="submit" disabled>Sign up</input>';
             }
             else 
             {
-                <input type="submit" value="submit">Sign up</input>;
+                document.body.innerHTML = '<input type="submit" value="submit">Sign up</input>';
             }
         </script>
     </form>
