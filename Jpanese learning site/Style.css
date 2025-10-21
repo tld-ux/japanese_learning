@@ -1,0 +1,106 @@
+/* Global style variables */
+:root {
+  --font: "FOT-Fafo Std", 
+           "Fafo Sans", 
+           "Noto Sans JP", 
+           "Hiragino Kaku Gothic ProN", 
+           "Yu Gothic", 
+           "Meiryo", 
+           sans-serif;
+  --text: #111;
+  --accent: #350303ea;
+  --card-bg: rgba(204, 200, 200, 0.582);
+}
+
+
+/* Fixed background */
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: url("images/lightmodebg.jpg") center/100% auto fixed no-repeat;
+  transition: background-image 0.4s ease;
+}
+
+.alt1 {
+  background: url("images/lightmodebg2.jpg") center/100% auto fixed no-repeat;
+}
+
+p {
+  text-align: left;   /* default */
+}
+p.centered {
+  text-align: center;
+}
+p.right {
+  text-align: right;
+}
+p.block {
+  display: inline-block;        /* makes it a solid block, not full-width */
+}
+
+/* Page content */
+.page {
+  min-height: 150vh;
+  padding: 20px;
+}
+
+/* Simple section cards */
+.card {
+  background: var(--card-bg);
+  padding: 15px;
+  margin: 10px auto;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.invisicard {
+  padding: 15px;
+  margin: 10px auto;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tall-card {
+  background: var(--card-bg);
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  max-width: 400px;        /* limit width */
+  height: 500px;           /* adjustable height */
+  overflow: auto;          /* scroll inside if content overflows */
+}
+
+.image-text {
+  display: flex;
+  align-items: flex-start;  /* top-align image & text */
+  justify-content: flex-start;
+  gap: 20px;                /* space between them */
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+/* Image styling */
+.image-text img {
+  max-width: 350px;
+  height: auto;
+  border-radius: 10px;
+}
+
+h1, h2 {
+  color: var(--accent);
+  margin-top: 0;
+}
