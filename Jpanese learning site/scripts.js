@@ -7,10 +7,10 @@ function toggleBackground() {
 
   if (bgToggle) {
     document.body.style.backgroundImage = "url('images/lightmodebg.jpg')";
-    document.getElementById("mode").innerHTML = "light mode";
+    document.getElementById("mode").innerHTML = "darkmode";
   } else {
     document.body.style.backgroundImage = "url('images/darkmodebg.jpg')";
-    document.getElementById("mode").innerHTML = "dark mode";
+    document.getElementById("mode").innerHTML = "lightmode";
   }
 
   // Keep background behavior consistent

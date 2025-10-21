@@ -6,8 +6,9 @@
   <link rel="stylesheet" href="style.css">
   
 </head>
-<body class="alt1">
+<body>
 <main class="page">
+    <script>document.body.style.backgroundImage = "url('images/lightmode2.jpg')"</script>
     <h1>Sign Up for a free lifetime membership</h1>
     <section>
         <form id="sign_up_form">
@@ -19,25 +20,13 @@
                 title="12+ chars, 1 uppercase, 1 number, 1 special" 
                 minlength="12" placeholder="Password" required><br><br>
             <label> Confirm password </label>
-            <input type="password" id="Confirm" placeholder="Confirm Password" required><br><br>
-            
-            <label> Phone number 1+</label>
+            <input type="password" id="confirm" name ="confirm" placeholder="Confirm Password" required><br><br>
+            <label> Phone number +1</label>
             <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder=XXX-XXX-XXXX ><br><br>
             <label id="email">Email </label> 
             <input type="email" placeholder="" ><br><br>
-            <button onclick="mySubmitCheck" id="submit" name="submit">Sign Up </button><br><br>
+            <button onclick="mySubmitCheck()" id="submit" name="submit">Sign Up </button><br><br>
         </form>
-        
-        <script>
-            mySubmitCheck();
-            if (mySubmitCheck()) {
-                document.getElementById("submit").disabled = true;
-            }
-            else {
-                alert("Thank you for signing up");
-                window.location = '/some/url';
-            }
-        </script>
     </section>
 <!-- Link to external JS file-->
 <script src="scripts.js"></script>
