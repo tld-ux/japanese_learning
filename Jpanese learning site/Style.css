@@ -7,7 +7,7 @@
            "Yu Gothic", 
            "Meiryo", 
            sans-serif;
-  --text: #111;
+  --text: #ffffff;
   --accent: #350303ea;
   --card-bg: rgba(204, 200, 200, 0.582);
 }
@@ -21,6 +21,7 @@ body {
   background: url("images/lightmodebg.jpg") center/100% auto fixed no-repeat;
   transition: background-image 0.4s ease;
 }
+
 
 .alt1 {
   background: url("images/lightmodebg2.jpg") center/100% auto fixed no-repeat;
@@ -73,12 +74,20 @@ p.block {
   clear: both;
 }
 
+.woodbox {
+  background: "doortextbox.jpg";
+  padding: 15px;
+  margin: 10px auto;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
 .tall-card {
   background: var(--card-bg);
   padding: 15px;
   margin: 10px;
   border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgb(255, 255, 255);
   max-width: 400px;        /* limit width */
   height: 500px;           /* adjustable height */
   overflow: auto;          /* scroll inside if content overflows */
