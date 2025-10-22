@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>My PHP signup Page</title>
-  <!-- Link to external CSS -->
+    <!-- Link to external CSS -->
   <link rel="stylesheet" href="style.css">
   
 </head>
@@ -11,9 +11,9 @@
     <script>document.body.style.backgroundImage = "url('images/lightmode2.jpg')"</script>
     <h1>Sign Up for a free lifetime membership</h1>
     <section>
-        <form id="sign_up_form">
+        <form id="sign_up_form" action="Signupresponse.php" method="get">
             <label>Username </label>
-            <input type="textbox" id="Username" name="Username" 
+            <input type="textbox" id="username" name="username" 
                 maxlength="12" placeholder="Username" required><br><br>
             <label> Password </label>
             <input type="password" id="password" name="password"
