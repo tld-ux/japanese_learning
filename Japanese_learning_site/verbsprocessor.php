@@ -22,7 +22,7 @@
         ?>
     </head>
     <body>
-         <?= You searched up the verb $requested_word, here is what we found ?>.<br/>
+        <?= echo "You looked up the verb $requested_word, here is what we found" ?>.<br/>
         <?php
             foreach($result as $row) // There should only be one row returned!
             {
