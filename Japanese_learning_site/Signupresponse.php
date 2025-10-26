@@ -17,11 +17,11 @@
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $server = "localhost";
-    $username = "tt";
-    $password = "Rep0Nuk3";
+    $username_db = "tt";
+    $password_db = "Rep0Nuk3";
     $database = "Credentials";
 
-    $conn = mysqli_connect($server, $username, $password, $database);
+    $conn = mysqli_connect($server, $username_db, $password_db, $database);
 
     if (!$conn) {
         die("<h1> Connection failed </h1>");
