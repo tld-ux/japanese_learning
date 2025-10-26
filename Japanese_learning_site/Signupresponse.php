@@ -8,6 +8,11 @@
 <main class="page">
 
 <?php
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+
     $server = "localhost";
     $user_db = "tt";
     $pass_db = "Rep0Nuk3";
@@ -24,10 +29,10 @@
     $phone  = trim($_POST["phone"]);
     $email  = trim($_POST["email"]);
 
-    $hash_pass = password_hash($passwd, PASSWORD_DEFAULT);
+    //$hash_pass = password_hash($passwd, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO Users (username, passwords, phone, email)
-            VALUES ('$usernm', '$hash_pass', '$phone', '$email')";
+            VALUES ('$usernm', '$passwd', '$phone', '$email')";
 
     if (mysqli_query($conn, $sql)) {
         echo "<h2>Sign up successful!</h2>";
