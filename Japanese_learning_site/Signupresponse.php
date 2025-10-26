@@ -10,7 +10,7 @@
 <?php
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["passwd"]);
-    $confirm  = htmlspecialchars($_POST["confirm"]);
+    $confirm  = htmlspecialchars($_POST["confirmpass"]);
     $phone    = htmlspecialchars($_POST["phone"]);
     $email    = htmlspecialchars($_POST["email"]);
 
@@ -21,7 +21,7 @@
     $password = "Rep0Nuk3";
     $database = "Credentials";
 
-    $conn = mysqli_connect($server, $username_db, $password_db, $database);
+    $conn = mysqli_connect($server, $username, $password, $database);
 
     if (!$conn) {
         die("<h1> Connection failed </h1>");
