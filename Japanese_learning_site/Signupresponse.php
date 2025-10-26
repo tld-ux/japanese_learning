@@ -31,8 +31,8 @@
 
     //$hash_pass = password_hash($passwd, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO Users (username, passwords, phone, email)
-            VALUES ('$usernm', '$passwd', '$phone', '$email')";
+    $sql = "INSERT INTO Users (username, passwords, tel, email, membership_tier)
+            VALUES ('$usernm', '$passwd', '$phone', '$email', 1)";
 
     if (mysqli_query($conn, $sql)) {
         echo "<h2>Sign up successful!</h2>";
