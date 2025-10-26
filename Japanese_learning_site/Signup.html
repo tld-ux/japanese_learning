@@ -11,21 +11,21 @@
     <script>document.body.style.backgroundImage = "url('images/lightmode2.jpg')"</script>
     <h1>Sign Up for a free lifetime membership</h1>
     <section>
-        <form id="sign_up_form" action="Signupresponse.php" method="get">
+        <form id="sign_up_form" onsubmit="mySubmitCheck()" action="Signupresponse.php" method="get">
             <label>Username </label>
-            <input type="textbox" id="username" name="username" 
+            <input type="textbox" id="user" name="user" 
                 maxlength="12" placeholder="Username" required><br><br>
             <label> Password </label>
-            <input type="password" id="passwd" name="passwd"
+            <input type="password" id="pass" name="pass"
                 title="12+ chars, 1 uppercase, 1 number, 1 special" 
                 minlength="12" placeholder="Password" required><br><br>
             <label> Confirm password </label>
             <input type="password" id="confirmpass" name ="confirmpass" placeholder="Confirm Password" required><br><br>
             <label> Phone number +1</label>
             <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder=XXX-XXX-XXXX ><br><br>
-            <label id="email">Email </label> 
+            <label> Email </label> 
             <input type="email" name="email" id="email" placeholder="" ><br><br>
-            <button type="submit" mySubmitCheck() id="submit" name="submit">Sign Up </button><br><br>
+            <button type="submit" id="submit" name="submit"> Sign Up </button><br><br>
         </form>
     </section>
 <!-- Link to external JS file-->
