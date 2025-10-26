@@ -10,8 +10,9 @@
 <main class="page">
     <script>document.body.style.backgroundImage = "url('images/lightmode2.jpg')"</script>
     <h1>Sign Up for a free lifetime membership</h1>
+    <!-- onsubmit="return mySubmitCheck()" --> 
     <section>
-        <form id="sign_up_form" onsubmit="return mySubmitCheck()" action="Signupresponse.php" method="post">
+        <form id="sign_up_form" action="Signupresponse.php" method="post">
             <label>Username </label>
             <input type="text" id="user" name="user" 
                 maxlength="12" placeholder="Username" required><br><br>
