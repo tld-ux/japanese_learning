@@ -23,7 +23,7 @@ function toggleBackground() {
 
 function mySubmitCheck() {
   // compare password and confirmation
-  if (password.value != confirm.value) {
+  if (passwd.value != confirmpass.value) {
     alert("Passwords has to match");
     return false; // failed validation
   }
