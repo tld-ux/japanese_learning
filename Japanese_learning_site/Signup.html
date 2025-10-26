@@ -11,9 +11,9 @@
     <script>document.body.style.backgroundImage = "url('images/lightmode2.jpg')"</script>
     <h1>Sign Up for a free lifetime membership</h1>
     <section>
-        <form id="sign_up_form" onsubmit="mySubmitCheck()" action="Signupresponse.php" method="post">
+        <form id="sign_up_form" onsubmit="return mySubmitCheck()" action="Signupresponse.php" method="post">
             <label>Username </label>
-            <input type="textbox" id="user" name="user" 
+            <input type="text" id="user" name="user" 
                 maxlength="12" placeholder="Username" required><br><br>
             <label> Password </label>
             <input type="password" id="pass" name="pass"
