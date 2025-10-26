@@ -9,9 +9,9 @@
 
 <?php
     $username = htmlspecialchars($_POST["username"]);
-    $password = htmlspecialchars($_POST["password"]);
+    $password = htmlspecialchars($_POST["passwd"]);
     $confirm  = htmlspecialchars($_POST["confirm"]);
-    $phone    = htmlspecialchars($_POST["tel"]);
+    $phone    = htmlspecialchars($_POST["phone"]);
     $email    = htmlspecialchars($_POST["email"]);
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -27,7 +27,7 @@
         die("<h1> Connection failed </h1>");
     }
 
-    $sql = "INSERT INTO Users (username, password, tel, email)
+    $sql = "INSERT INTO Users (username, passwd, phone, email)
             VALUES ("$username", "$hashed_password", "$phone", "$email")";
 
     if (mysqli_query($conn, $sql)) {
