@@ -8,11 +8,10 @@
 <main class="page">
 
 <?php
-    $username = htmlspecialchars($_POST["username"]);
-    $password = htmlspecialchars($_POST["passwd"]);
-    $confirm  = htmlspecialchars($_POST["confirmpass"]);
-    $phone    = htmlspecialchars($_POST["phone"]);
-    $email    = htmlspecialchars($_POST["email"]);
+    $username = htmlspecialchars($_GET["username"]);
+    $password = htmlspecialchars($_GET["passwd"]);
+    $phone    = htmlspecialchars($_GET["phone"]);
+    $email    = htmlspecialchars($_GET["email"]);
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -27,8 +26,7 @@
         die("<h1> Connection failed </h1>");
     }
 
-    $sql = "INSERT INTO Users (username, passwd, phone, email)
-            VALUES ("$username", "$hashed_password", "$phone", "$email")";
+    $sql = "INSERT INTO Users (username, passwd, phone, email) VALUES ('$username', '$hashed_password', '$phone', '$email')";
 
     if (mysqli_query($conn, $sql)) {
         echo "<h2> Sign up successful!</h2>";
