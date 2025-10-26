@@ -14,11 +14,6 @@
     $phone    = htmlspecialchars($_POST["tel"]);
     $email    = htmlspecialchars($_POST["email"]);
 
-    if ($password !== $confirm) {
-        echo "<h2 Passwords do not match! Please go back and try again.</h2>";
-        exit;
-    }
-
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $server = "localhost";
