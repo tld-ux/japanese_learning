@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>TCGdex</title>
+</head>
+
+<body style="text-align: center;">
+
+
+  <img id="card-image" src="" alt="Loading...">
+  <p id="card-name">Loading...</p>
+
+  <script>
+    let pokimage = document.getElementById("card-image");
+    let pokiname = document.getElementById("card-name");
+
+    async function showRandomCard() {
+      let response = await fetch("https://api.tcgdex.net/v2/ja/random/card");
+      let card = await response.json();
+
+      let imageUrl = card.image + "/low.png";
+
+      pokimage.src = imageUrl;
+      pokiname.textContent = card.name;
+    }
+    showRandomCard();
+    setInterval(showRandomCard, 5000);
+  </script>
+</body>
+</html>
+
