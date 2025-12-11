@@ -6,37 +6,35 @@
   <link rel="stylesheet" href="Style.css">
 </head>
 
-<body>
+<body style="text-align: center;">
   <section class="invisicard">
-      <h2>Browse the learning topics</h2>
-      <div class="row">
-        <div class="column">
-          <img id="card-imageja" src="" alt="Loading japanese...">
-          <p id="card-nameja">Loading...</p>
-        </div>
-        <div class="column">
-          <img id="card-imageen" src="" alt="Loading english...">
-          <p id="card-nameen">Loading...</p>
-        </div>
-      </div>
-    </section>
+    <h2> What is the translation for this card? </h2>
+    <img id="card-image" src="" alt="Not available in french...sorry">
+    <p id="card-name" style="text-align: center;">Loading...</p>
+  </section>
     <script>
-      let pokimageen = document.getElementById("card-imageen");
-      let pokinameen = document.getElementById("card-nameen");
-      let pokimageja = document.getElementById("card-imageja");
-      let pokinameja = document.getElementById("card-nameja");
-
+      let pokimage = document.getElementById("card-image");
+      let pokiname = document.getElementById("card-name");
+      let lang = "fr";
+      let response;
+      let setId;
+      let card;
       async function showRandomCard() {
-        let responseen = await fetch("https://api.tcgdex.net/v2/ja/random/card");
-        let carden = await responseen.json();
+        if (lang == "fr") {
+          lang = "en";
+          response = await fetch(`https://api.tcgdex.net/v2/${lang}/random/card`);
+          card = await response.json();
+          setId = card.id;
+        } else {
+          lang = "fr";
+          response = await fetch(`https://api.tcgdex.net/v2/${lang}/cards/${setId}`);
+          card = await response.json();
+          setId = card.id;
+        }
 
-        let imageUrlen = carden.image + "/low.png";
-        let imageUrlja = cardja.image + "/low.png";
-
-        pokimageja.src = imageUrlja;
-        pokinameja.textContent = cardja.name;
-        pokimageen.src = imageUrlen;
-        pokinameen.textContent = carden.name;
+        let imageUrl = card.image + "/low.png";
+        pokimage.src = imageUrl;
+        pokiname.textContent = card.name;
       }
       showRandomCard();
       setInterval(showRandomCard, 5000);
