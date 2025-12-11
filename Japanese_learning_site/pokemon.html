@@ -2,55 +2,45 @@
 <html lang="ja">
 <head>
   <title>TCGdex</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="Style.css">
 </head>
 
-<body style="text-align: center;">
-
-
-  <img id="card-image" src="" alt="Loading...">
-  <p id="card-name">Loading...</p>
-
+<body>
   <section class="invisicard">
       <h2>Browse the learning topics</h2>
       <div class="row">
         <div class="column">
-          <script>
-          let pokimageja = document.getElementById("card-image");
-          let pokinameja = document.getElementById("card-name");
-
-          async function showRandomCard() {
-            let response = await fetch("https://api.tcgdex.net/v2/ja/random/card");
-            let cardja = await response.json();
-
-            let imageUrlja = cardja.image + "/low.png";
-
-            pokimageja.src = imageUrlja;
-            pokinameja.textContent = card.name;
-          }
-          showRandomCard();
-          setInterval(showRandomCard, 5000);
-        </script>
+          <img id="card-imageja" src="" alt="Loading japanese...">
+          <p id="card-nameja">Loading...</p>
         </div>
         <div class="column">
-          <script>
-          let pokimageen = document.getElementById("card-image");
-          let pokinameen = document.getElementById("card-name");
-
-          async function showRandomCard() {
-            let response = await fetch("https://api.tcgdex.net/v2/ja/random/card");
-            let carden = await response.json();
-
-            let imageUrlen = carden.image + "/low.png";
-
-            pokimageen.src = imageUrlen;
-            pokinameen.textContent = card.name;
-          }
-          showRandomCard();
-          setInterval(showRandomCard, 5000);
-        </script>
+          <img id="card-imageen" src="" alt="Loading english...">
+          <p id="card-nameen">Loading...</p>
         </div>
       </div>
     </section>
-</body>
+    <script>
+      let pokimageen = document.getElementById("card-imageen");
+      let pokinameen = document.getElementById("card-nameen");
+      let pokimageja = document.getElementById("card-imageja");
+      let pokinameja = document.getElementById("card-nameja");
+
+      async function showRandomCard() {
+        let responseen = await fetch("https://api.tcgdex.net/v2/ja/random/card");
+        let carden = await responseen.json();
+
+        let imageUrlen = carden.image + "/low.png";
+        let imageUrlja = cardja.image + "/low.png";
+
+        pokimageja.src = imageUrlja;
+        pokinameja.textContent = cardja.name;
+        pokimageen.src = imageUrlen;
+        pokinameen.textContent = carden.name;
+      }
+      showRandomCard();
+      setInterval(showRandomCard, 5000);
+    </script>      
+  </body>
 </html>
 
