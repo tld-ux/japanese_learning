@@ -28,7 +28,6 @@
             if (mysqli_query($conn, $sql)) {
                 header("Location: https://google.com/search?q=$full_search")
             }
-
             mysqli_close($conn);
         ?>
     </body>
