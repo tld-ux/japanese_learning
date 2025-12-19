@@ -9,7 +9,7 @@
 <body style="text-align: center;">
   <section class="invisicard">
     <h2> What is the translation for this card? </h2>
-    <img id="card-image" src="" alt="Not available in french...sorry">
+    <img id="card-image" src="" alt="Not available...sorry">
     <p id="card-name" style="text-align: center;">Loading...</p>
   </section>
     <script>
@@ -29,7 +29,7 @@
           lang = "fr";
           response = await fetch(`https://api.tcgdex.net/v2/${lang}/cards/${setId}`);
           card = await response.json();
-          setId = card.id;
+          setId = card.id;  // technicaly redundant
         }
 
         let imageUrl = card.image + "/low.png";
