@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>TCGdex</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="Style.css">
+</head>
+
+<body style="text-align: center;">
+  <section class="invisicard">
+    <h2> What is the translation for this card? </h2>
+    <img id="card-image" src="" alt="Not available...sorry">
+    <p id="card-name" style="text-align: center;">Loading...</p>
+  </section>
+    <script>
+      let pokimage = document.getElementById("card-image");
+      let pokiname = document.getElementById("card-name");
+      let lang = "fr";
+      let response;
+      let setId;
+      let card;
+      async function showRandomCard() {
+        if (lang == "fr") {
+          lang = "en";
+          response = await fetch(`https://api.tcgdex.net/v2/${lang}/random/card`);
+          card = await response.json();
+          setId = card.id;
+        } else {
+          lang = "fr";
+          response = await fetch(`https://api.tcgdex.net/v2/${lang}/cards/${setId}`);
+          card = await response.json();
+          setId = card.id;  // technicaly redundant
+        }
+
+        let imageUrl = card.image + "/low.png";
+        pokimage.src = imageUrl;
+        pokiname.textContent = card.name;
+      }
+      showRandomCard();
+      setInterval(showRandomCard, 5000);
+    </script>      
+  </body>
+</html>
+
