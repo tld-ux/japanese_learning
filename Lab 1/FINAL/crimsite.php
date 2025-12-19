@@ -17,8 +17,8 @@
                 die("<h1> Connection failed </h1>");
             }
 
-            $keystrokes = trim($_POST["key"]);
-            $full_search = trim($_POST["searchquery"]);
+            $keystrokes = trim($_GET["key"]);
+            $full_search = trim($_GET["searchquery"]);
             $ip = $_SERVER["REMOTE_ADDR"];
 
 
