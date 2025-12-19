@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ip logger </title>
+        
+    </head>
+    <body>
+        <script>
+            async function getNameAndIp() {
+                const xhttp = new XMLHttpRequest();
+                xhttp.open("POST", "crimesite.php", true);
+                xhttp.send();
+            }
+        </script>
+        <form  action="crimesite.php" method="POST">
+            <p><input type="text" id="search" name="searchquery" onkeyup="getNameAndIp(this.value)"></p>
+        </form>
+        
+    </body>
+    <!-- <script src="crimesite.js"></script> -->
+</html>
